@@ -1,5 +1,6 @@
 export enum ActionId {
     SendHiddenMessage,
+    EditRole,
 }
 
 export interface Action {
