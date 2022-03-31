@@ -1,0 +1,21 @@
+{
+  "name": "rolekeeper-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "discord-api-types": "^0.30.0"
+  }
+}
