@@ -5,7 +5,7 @@ export enum ActionId {
 
 export interface Action {
     id: ActionId // アクションの種類用
-    envs: { [p: string]: string }
+    envs: { [p: string]: any }
 }
 
 export interface WrappedAction {
