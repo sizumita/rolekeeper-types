@@ -1,6 +1,8 @@
 export enum ActionId {
     SendHiddenMessage,
     EditRole,
+    DelayAddRole,
+    DelayRemoveRole,
 }
 
 export interface Action {
@@ -24,6 +26,18 @@ export const actionInitials: { [p in ActionId]: Action } = {
             addRoles: [],
             removeRoles: [],
             toggleRoles: [],
+        }
+    },
+    [ActionId.DelayAddRole]: {
+        id: ActionId.DelayAddRole,
+        envs: {
+            id: ""
+        }
+    },
+    [ActionId.DelayRemoveRole]: {
+        id: ActionId.DelayRemoveRole,
+        envs: {
+            id: ""
         }
     }
 }
