@@ -33,14 +33,14 @@ export const actionInitials: { [p in ActionId]: Action } = {
     [ActionId.DelayAddRole]: {
         id: ActionId.DelayAddRole,
         envs: {
-            id: null as APIRole | null,
+            role: null as APIRole | null,
             minutes: 30
         }
     },
     [ActionId.DelayRemoveRole]: {
         id: ActionId.DelayRemoveRole,
         envs: {
-            id: null as APIRole | null,
+            role: null as APIRole | null,
             minutes: 30,
         }
     }
