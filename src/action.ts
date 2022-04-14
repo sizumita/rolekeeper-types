@@ -31,13 +31,15 @@ export const actionInitials: { [p in ActionId]: Action } = {
     [ActionId.DelayAddRole]: {
         id: ActionId.DelayAddRole,
         envs: {
-            id: ""
+            id: "",
+            minutes: 30
         }
     },
     [ActionId.DelayRemoveRole]: {
         id: ActionId.DelayRemoveRole,
         envs: {
-            id: ""
+            id: "",
+            minutes: 30,
         }
     }
 }
