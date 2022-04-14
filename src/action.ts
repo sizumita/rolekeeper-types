@@ -1,3 +1,5 @@
+import {APIRole} from "discord-api-types/v10";
+
 export enum ActionId {
     SendHiddenMessage,
     EditRole,
@@ -23,22 +25,22 @@ export const actionInitials: { [p in ActionId]: Action } = {
     [ActionId.EditRole]: {
         id: ActionId.EditRole,
         envs: {
-            addRoles: [],
-            removeRoles: [],
-            toggleRoles: [],
+            addRoles: [] as APIRole[],
+            removeRoles: [] as APIRole[],
+            toggleRoles: [] as APIRole[],
         }
     },
     [ActionId.DelayAddRole]: {
         id: ActionId.DelayAddRole,
         envs: {
-            id: "",
+            id: null as APIRole | null,
             minutes: 30
         }
     },
     [ActionId.DelayRemoveRole]: {
         id: ActionId.DelayRemoveRole,
         envs: {
-            id: "",
+            id: null as APIRole | null,
             minutes: 30,
         }
     }
