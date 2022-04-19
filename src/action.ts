@@ -5,6 +5,7 @@ export enum ActionId {
     EditRole,
     DelayAddRole,
     DelayRemoveRole,
+    Verify2Fa,
 }
 
 export interface Action {
@@ -43,5 +44,9 @@ export const actionInitials: { [p in ActionId]: Action } = {
             role: null as APIRole | null,
             minutes: 30,
         }
+    },
+    [ActionId.Verify2Fa]: {
+        id: ActionId.Verify2Fa,
+        envs: {}
     }
 }
