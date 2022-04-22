@@ -1,4 +1,4 @@
-import {APIRole} from "discord-api-types/v10";
+import {APIRole, TextInputStyle} from "discord-api-types/v10";
 
 export enum ActionId {
     SendHiddenMessage,
@@ -6,6 +6,7 @@ export enum ActionId {
     DelayAddRole,
     DelayRemoveRole,
     Verify2Fa,
+    ReadTextFromModal,
 }
 
 export interface Action {
@@ -48,5 +49,15 @@ export const actionInitials: { [p in ActionId]: Action } = {
     [ActionId.Verify2Fa]: {
         id: ActionId.Verify2Fa,
         envs: {}
+    },
+    [ActionId.ReadTextFromModal]: {
+        id: ActionId.ReadTextFromModal,
+        envs: {
+            title: "",
+            minLength: 0,
+            maxLength: 2000,
+            style: TextInputStyle.Short,
+            label: ""
+        }
     }
 }
