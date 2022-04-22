@@ -7,6 +7,7 @@ export enum ActionId {
     DelayRemoveRole,
     Verify2Fa,
     ReadTextFromModal,
+    SendMessage,
 }
 
 export interface Action {
@@ -53,12 +54,19 @@ export const actionInitials: { [p in ActionId]: Action } = {
     [ActionId.ReadTextFromModal]: {
         id: ActionId.ReadTextFromModal,
         envs: {
-            title: "",
+            title: "タイトル",
             minLength: 0,
             maxLength: 2000,
             style: TextInputStyle.Short,
-            label: "",
+            label: "ラベル",
             castTo: "MODAL_INPUT"
+        }
+    },
+    [ActionId.SendMessage]: {
+        id: ActionId.SendMessage,
+        envs: {
+            content: "内容",
+            channel: null as string | null
         }
     }
 }
