@@ -57,7 +57,8 @@ export const actionInitials: { [p in ActionId]: Action } = {
             minLength: 0,
             maxLength: 2000,
             style: TextInputStyle.Short,
-            label: ""
+            label: "",
+            castTo: "$MODAL_INPUT"
         }
     }
 }
