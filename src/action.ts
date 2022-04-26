@@ -1,4 +1,10 @@
 import {APIRole, TextInputStyle} from "discord-api-types/v10";
+import {EditRoleAction} from "./actions/editRole";
+import {SendHiddenMessageAction} from "./actions/sendHiddenMessage";
+import {DelayAddRoleAction, DelayRemoveRoleAction} from "./actions/delayRole";
+import {Verify2FaAction} from "./actions/verify2Fa";
+import {ReadTextFromModalAction} from "./actions/readTextFromModal";
+import {SendMessageAction} from "./actions/sendMessage";
 
 export enum ActionId {
     SendHiddenMessage,
@@ -10,10 +16,20 @@ export enum ActionId {
     SendMessage,
 }
 
-export interface Action {
+export interface ActionBase {
     id: ActionId // アクションの種類用
     envs: { [p: string]: any }
 }
+
+export type Action
+    = EditRoleAction
+    | SendHiddenMessageAction
+    | DelayAddRoleAction
+    | DelayRemoveRoleAction
+    | Verify2FaAction
+    | ReadTextFromModalAction
+    | SendMessageAction
+
 
 export interface WrappedAction {
     customId: string // ボタンと紐付ける用.
